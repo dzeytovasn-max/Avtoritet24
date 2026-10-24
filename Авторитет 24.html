@@ -1,0 +1,630 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Авторитет 24</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700&family=Onest:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: asymmetric hero (text left, interactive paint stand right), then ruled service list,
+   a paint-layer cross-section, and a contact block with a prefilled WhatsApp request. */
+:root {
+  --bg: #E7EAEE;
+  --surface: #F4F5F7;
+  --ink: #10141A;
+  --muted: #4A5562;
+  --line: #C2C9D1;
+  --paint: #1B4F9C;
+  --signal: #FFB020;
+  --on-signal: #14110A;
+  --font-display: "Tektur", "Arial Narrow", "Segoe UI", sans-serif;
+  --font-body: "Onest", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --mat-clear: #9CC0F2;
+  --mat-base: #1D56A8;
+  --mat-primer: #8E959D;
+  --mat-metal: #B3B9C1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1116;
+    --surface: #151B22;
+    --ink: #E8ECF1;
+    --muted: #9BA6B4;
+    --line: #28323C;
+    --paint: #7FB0FF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1116;
+  --surface: #151B22;
+  --ink: #E8ECF1;
+  --muted: #9BA6B4;
+  --line: #28323C;
+  --paint: #7FB0FF;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.wrap {
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.band { padding-block: clamp(56px, 9vw, 104px); }
+.band--surface { background: var(--surface); border-block: 1px solid var(--line); }
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.5rem, 7.4vw, 4.7rem); line-height: 1.02; }
+h2 { font-size: clamp(1.7rem, 4.2vw, 2.6rem); line-height: 1.1; }
+h3 { font-size: 1.35rem; line-height: 1.2; font-weight: 500; }
+p { margin: 0; }
+
+/* header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px; }
+.brand { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.brand b { background: var(--signal); color: var(--on-signal); padding: 0 7px; line-height: 1.35; border-radius: 3px; }
+.nav { display: flex; gap: 28px; }
+.nav a { text-decoration: none; font-size: 0.95rem; color: var(--muted); padding-block: 6px; background: linear-gradient(var(--ink), var(--ink)) left bottom / 0 1px no-repeat; transition: background-size .25s, color .2s; }
+.nav a:hover { color: var(--ink); background-size: 100% 1px; }
+.top__tel { font-family: var(--font-mono); font-size: 0.9rem; text-decoration: none; border: 1px solid var(--line); padding: 8px 12px; border-radius: 3px; white-space: nowrap; }
+.top__tel:hover { border-color: var(--ink); }
+@media (max-width: 760px) { .nav { display: none; } }
+@media (max-width: 380px) { .top__tel { font-size: 0.8rem; padding: 7px 9px; } .brand { font-size: 1.15rem; } }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(24px, 5vw, 56px) clamp(48px, 8vw, 96px); }
+.hero__copy { display: grid; gap: 22px; justify-items: start; min-width: 0; }
+.hero__lead { font-size: 1.15rem; color: var(--muted); max-width: 34ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font: 600 1rem/1.2 var(--font-body); padding: 14px 20px; border-radius: 4px; border: 1px solid var(--ink); background: transparent; color: var(--ink); text-decoration: none; cursor: pointer; transition: transform .15s, background .2s; }
+.btn:hover { transform: translateY(-1px); }
+.btn--signal { background: var(--signal); border-color: var(--signal); color: var(--on-signal); }
+.btn--signal:hover { background: #FFC24D; border-color: #FFC24D; }
+.btn--ghost:hover { background: var(--surface); }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+@media (max-width: 880px) { .hero { grid-template-columns: minmax(0, 1fr); } }
+
+/* stand */
+.stand { display: grid; gap: 12px; min-width: 0; }
+.stand__frame { position: relative; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #0a1f45; box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.55); aspect-ratio: 5 / 3; max-width: 100%; }
+.stand__frame canvas { display: block; width: 100%; height: 100%; cursor: crosshair; touch-action: pan-y; }
+.stand__tag { position: absolute; left: 12px; top: 12px; padding: 4px 8px; background: rgba(10, 18, 30, 0.72); color: #E8ECF1; border-radius: 3px; pointer-events: none; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.stand__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; }
+.gloss { display: grid; gap: 6px; min-width: 200px; flex: 1 1 220px; }
+.gloss__row { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+.gloss__row strong { color: var(--ink); font-weight: 500; }
+.gloss__track { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.gloss__fill { display: block; height: 100%; width: 0; background: var(--signal); transition: width .12s linear; }
+.stand__btns { display: flex; gap: 8px; }
+.btn--sm { padding: 9px 14px; font-size: 0.9rem; }
+
+/* services */
+.head { display: grid; gap: 14px; margin-bottom: clamp(28px, 5vw, 48px); max-width: 44rem; }
+.svc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 8px 40px; padding-block: 26px; border-top: 1px solid var(--line); align-items: baseline; }
+.svc:last-of-type { border-bottom: 1px solid var(--line); }
+.svc h3 { transition: color .2s; }
+.svc:hover h3 { color: var(--paint); }
+.svc p { color: var(--muted); max-width: 52ch; }
+.price { display: inline-flex; align-items: baseline; gap: 10px; margin-top: 10px; font-family: var(--font-mono); font-size: 0.85rem; }
+.price b { background: var(--signal); color: var(--on-signal); padding: 2px 8px; border-radius: 3px; font-weight: 500; }
+.price span { color: var(--muted); }
+@media (max-width: 720px) { .svc { grid-template-columns: minmax(0, 1fr); } }
+.brands { margin-top: 34px; display: grid; gap: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chips li { border: 1px solid var(--line); padding: 6px 12px; border-radius: 99px; font-size: 0.92rem; background: var(--surface); }
+.band--surface .chips li { background: var(--bg); }
+
+/* paint layers */
+.proc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+@media (max-width: 880px) { .proc { grid-template-columns: minmax(0, 1fr); } }
+.layers { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--bg); }
+.layer { display: grid; grid-template-columns: minmax(84px, 38%) minmax(0, 1fr); border-bottom: 1px solid var(--line); }
+.layer:last-child { border-bottom: 0; }
+.layer__bar { position: relative; overflow: hidden; }
+.layer__txt { padding: 14px 18px; display: grid; gap: 2px; align-content: center; min-width: 0; }
+.layer__txt h3 { font-size: 1.1rem; }
+.layer__txt p { color: var(--muted); font-size: 0.95rem; }
+.layer--clear .layer__bar { min-height: 56px; background: linear-gradient(180deg, #D7E6FB, var(--mat-clear)); }
+.layer--clear .layer__bar::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.85) 50%, transparent 65%); background-size: 260% 100%; background-position: 120% 0; animation: glint 4.8s ease-in-out infinite; }
+.layer--base .layer__bar { min-height: 72px; background: radial-gradient(circle at 20% 30%, rgba(190, 220, 255, 0.5) 0 1px, transparent 1.5px) 0 0 / 11px 9px, radial-gradient(circle at 70% 70%, rgba(190, 220, 255, 0.35) 0 1px, transparent 1.5px) 0 0 / 7px 13px, var(--mat-base); }
+.layer--primer .layer__bar { min-height: 84px; background: var(--mat-primer); }
+.layer--metal .layer__bar { min-height: 104px; background: repeating-linear-gradient(115deg, #A5ABB3 0 2px, var(--mat-metal) 2px 6px); }
+@keyframes glint { 0%, 25% { background-position: 120% 0; } 70%, 100% { background-position: -20% 0; } }
+.grit { margin-top: 28px; display: grid; gap: 12px; }
+.grit ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.grit li { font-family: var(--font-mono); font-size: 0.9rem; border: 1px solid var(--ink); padding: 5px 11px; border-radius: 3px; }
+.grit li:not(:last-child)::after { content: "\2192"; margin-left: 14px; color: var(--muted); }
+.grit li:last-child { background: var(--signal); border-color: var(--signal); color: var(--on-signal); }
+.proc__text { display: grid; gap: 18px; }
+.proc__text p { color: var(--muted); max-width: 46ch; }
+
+/* review */
+.rev { display: grid; grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr); gap: clamp(24px, 5vw, 72px); align-items: center; }
+@media (max-width: 720px) { .rev { grid-template-columns: minmax(0, 1fr); } }
+.score { display: grid; gap: 6px; }
+.score__n { font-family: var(--font-display); font-weight: 700; font-size: clamp(4rem, 12vw, 7rem); line-height: 0.9; }
+.rev blockquote { margin: 0; display: grid; gap: 16px; }
+.rev blockquote p { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.5rem, 3.6vw, 2.3rem); line-height: 1.2; text-wrap: balance; }
+
+/* contact */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+@media (max-width: 880px) { .contact { grid-template-columns: minmax(0, 1fr); } }
+.contact__info { display: grid; gap: 26px; min-width: 0; }
+.addr { display: grid; gap: 4px; }
+.addr strong { font-weight: 500; font-size: 1.2rem; }
+.tel { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.tel a#phone { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 5vw, 2.4rem); text-decoration: none; letter-spacing: 0.01em; }
+.tel a#phone:hover { color: var(--paint); }
+.soc { display: flex; flex-wrap: wrap; gap: 8px; }
+.soc a { border: 1px solid var(--line); padding: 8px 14px; border-radius: 99px; text-decoration: none; font-size: 0.95rem; background: var(--surface); transition: border-color .2s; }
+.soc a:hover { border-color: var(--ink); }
+.req { display: grid; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: clamp(18px, 3vw, 30px); min-width: 0; }
+.req h3 { font-size: 1.4rem; }
+.field { display: grid; gap: 6px; }
+.field label { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.field select, .field input, .field textarea { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; }
+.field textarea { min-height: 96px; resize: vertical; }
+.field select:focus, .field input:focus, .field textarea:focus { border-color: var(--ink); }
+.req small { color: var(--muted); font-size: 0.85rem; }
+
+.foot { padding-block: 32px 40px; border-top: 1px solid var(--line); display: grid; gap: 6px; }
+.foot p { color: var(--muted); font-size: 0.88rem; max-width: 70ch; }
+
+@media (prefers-reduced-motion: reduce) {
+  .layer--clear .layer__bar::after { animation: none; background-position: 40% 0; }
+  .btn, .nav a, .gloss__fill { transition: none; }
+}
+</style>
+
+<header class="wrap top">
+  <a class="brand" href="#top" aria-label="Авторитет 24">Авторитет <b>24</b></a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#services">Услуги</a>
+    <a href="#process">Покраска</a>
+    <a href="#reviews">Отзыв</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="top__tel" href="tel:+79059751818">+7 (905) 975-18-18</a>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div class="hero__copy">
+      <p class="mono">Кузовной ремонт · Покраска · Полировка</p>
+      <h1>Царапины не навсегда</h1>
+      <p class="hero__lead">Кузовной цех в Красноярске. Выправим, подберём цвет, покрасим и отполируем до глянца.</p>
+      <div class="cta">
+        <a class="btn btn--signal" href="tel:+79059751818">Позвонить</a>
+        <a class="btn btn--ghost" href="https://wa.me/79059751818" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      </div>
+      <p class="facts mono"><span>Ястынская, 44Е, бокс 1</span><span>Работаем с 9:00</span><span>4,1 на Яндекс Картах</span></p>
+    </div>
+
+    <div class="stand">
+      <div class="stand__frame">
+        <canvas id="stand" aria-label="Демо-стенд: панель кузова, которую можно отполировать курсором или пальцем" role="img"></canvas>
+        <span class="stand__tag">Демо-стенд · панель крыла</span>
+      </div>
+      <div class="stand__bar">
+        <div class="gloss mono">
+          <div class="gloss__row"><span>Глянец 60°</span><strong id="gu">12 GU</strong></div>
+          <div class="gloss__track"><span class="gloss__fill" id="gufill"></span></div>
+          <span id="hint">Проведите по правой части панели</span>
+        </div>
+        <div class="stand__btns">
+          <button class="btn btn--sm" type="button" id="btn-polish">Отполировать</button>
+          <button class="btn btn--sm btn--ghost" type="button" id="btn-reset">Сбросить</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--surface" id="services">
+    <div class="wrap">
+      <div class="head">
+        <p class="mono">Услуги</p>
+        <h2>Что делаем в боксе на Ястынской</h2>
+      </div>
+
+      <div class="svc">
+        <h3>Кузовной ремонт</h3>
+        <div>
+          <p>Вмятины, сколы, следы парковок и мелких ДТП. Выправляем, зачищаем и готовим поверхность под покраску.</p>
+        </div>
+      </div>
+      <div class="svc">
+        <h3>Покраска</h3>
+        <div>
+          <p>Подбор цвета по коду краски, грунт, база и лак. Красим отдельную деталь или кузов целиком.</p>
+        </div>
+      </div>
+      <div class="svc">
+        <h3>Полировка</h3>
+        <div>
+          <p>Убираем паутину и мелкие царапины, возвращаем глубину цвета. Отдельно полируем оптику, если фары помутнели.</p>
+          <p class="price"><b>400 ₽</b><span>глубокая полировка оптики, цену уточняйте по телефону</span></p>
+        </div>
+      </div>
+      <div class="svc">
+        <h3>Автодиагностика</h3>
+        <div>
+          <p>Проверим автомобиль до начала работ, чтобы понимать его состояние и не удивляться потом.</p>
+        </div>
+      </div>
+
+      <div class="brands">
+        <p class="mono">С чем работаем</p>
+        <ul class="chips">
+          <li>Японские</li>
+          <li>Корейские</li>
+          <li>Европейские</li>
+          <li>Китайские</li>
+          <li>Американские</li>
+          <li>Гибриды и электромобили</li>
+          <li>Грузовики</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="process">
+    <div class="wrap proc">
+      <div class="layers" role="img" aria-label="Слои покраски сверху вниз: лак, базовая эмаль, грунт, металл кузова">
+        <div class="layer layer--clear">
+          <div class="layer__bar"></div>
+          <div class="layer__txt"><h3>Лак</h3><p>Глянец и защита от солнца, реагентов и мойки.</p></div>
+        </div>
+        <div class="layer layer--base">
+          <div class="layer__bar"></div>
+          <div class="layer__txt"><h3>Базовая эмаль</h3><p>Цвет. Подбираем по коду краски вашего автомобиля.</p></div>
+        </div>
+        <div class="layer layer--primer">
+          <div class="layer__bar"></div>
+          <div class="layer__txt"><h3>Грунт</h3><p>Сцепление и ровная основа под цвет.</p></div>
+        </div>
+        <div class="layer layer--metal">
+          <div class="layer__bar"></div>
+          <div class="layer__txt"><h3>Металл</h3><p>Кузов после правки и зачистки.</p></div>
+        </div>
+      </div>
+
+      <div class="proc__text">
+        <p class="mono">Покраска и полировка</p>
+        <h2>Глянец собирается слой за слоем</h2>
+        <p>Результат зависит от основы. Ровный металл, чистый грунт и точный цвет дают лак, который держит блеск. Если на лаке остались следы, их снимают полировкой.</p>
+        <div class="grit">
+          <p class="mono">Полировка идёт от грубого к тонкому</p>
+          <ol aria-label="Этапы полировки">
+            <li>P800</li>
+            <li>P1500</li>
+            <li>P3000</li>
+            <li>Паста</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--surface" id="reviews">
+    <div class="wrap rev">
+      <div class="score">
+        <p class="score__n">4,1</p>
+        <p class="mono">6 оценок на Яндекс Картах</p>
+      </div>
+      <blockquote>
+        <p>«Отлично сделали мне авто. Рекомендую»</p>
+        <footer class="mono">Александр Котельников · 27 октября 2024 · отзыв на Яндекс Картах</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="band" id="contacts">
+    <div class="wrap contact">
+      <div class="contact__info">
+        <div class="head" style="margin:0">
+          <p class="mono">Контакты</p>
+          <h2>Приезжайте или напишите</h2>
+        </div>
+        <div class="addr">
+          <strong>Красноярск, Ястынская улица, 44Е</strong>
+          <span>1 бокс, 3 этаж</span>
+          <span class="mono" style="margin-top:6px">Работаем с 9:00. Конец дня и выходные уточняйте по телефону.</span>
+        </div>
+        <div class="tel">
+          <a id="phone" href="tel:+79059751818">+7 (905) 975-18-18</a>
+          <button class="btn btn--sm btn--ghost" type="button" id="copy">Скопировать номер</button>
+        </div>
+        <div class="soc">
+          <a href="https://wa.me/79059751818" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/Avtoritet_124" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.ru/avtoritet_24" target="_blank" rel="noopener">ВКонтакте</a>
+          <a href="https://yandex.ru/maps/org/avtoritet_24/64960257123/" target="_blank" rel="noopener">Маршрут на Яндекс Картах</a>
+        </div>
+      </div>
+
+      <form class="req" id="req" aria-labelledby="req-h">
+        <h3 id="req-h">Опишите задачу</h3>
+        <div class="field">
+          <label for="svc">Что нужно</label>
+          <select id="svc">
+            <option>Кузовной ремонт</option>
+            <option>Покраска</option>
+            <option>Полировка</option>
+            <option>Автодиагностика</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="car">Марка и модель</label>
+          <input id="car" type="text" placeholder="Например, Toyota Camry">
+        </div>
+        <div class="field">
+          <label for="note">Что случилось</label>
+          <textarea id="note" placeholder="Царапина на заднем бампере, нужен подбор цвета"></textarea>
+        </div>
+        <a class="btn btn--signal" id="wa" href="https://wa.me/79059751818" target="_blank" rel="noopener">Открыть WhatsApp с текстом</a>
+        <small>Откроется чат с готовым сообщением. Отправляете его вы сами.</small>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p class="mono">Демо-версия сайта</p>
+  <p>Тексты и данные взяты из карточки «Авторитет 24» на Яндекс Картах. Цены и график работы уточняйте у владельца перед запуском сайта.</p>
+</footer>
+
+<script>
+(function () {
+  var W = 1200, H = 720, BR = 62;
+  var cv = document.getElementById('stand');
+  cv.width = W; cv.height = H;
+  var ctx = cv.getContext('2d');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function rng(seed) {
+    return function () {
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function layer() {
+    var c = document.createElement('canvas'); c.width = W; c.height = H; return c;
+  }
+
+  function paint(glossy) {
+    var c = layer(), g = c.getContext('2d'), r = rng(11);
+    var base = g.createLinearGradient(0, 0, 0, H);
+    base.addColorStop(0, '#6aa4f0'); base.addColorStop(0.18, '#3f7fdc'); base.addColorStop(0.40, '#17448f');
+    base.addColorStop(0.50, '#0a1f45'); base.addColorStop(0.56, '#12326b'); base.addColorStop(0.80, '#1d56a8'); base.addColorStop(1, '#0e2b5c');
+    g.fillStyle = base; g.fillRect(0, 0, W, H);
+
+    // soft environment streaks
+    g.save(); g.translate(W * 0.5, H * 0.5); g.rotate(-0.38);
+    var s = g.createLinearGradient(0, -140, 0, 140);
+    s.addColorStop(0, 'rgba(255,255,255,0)'); s.addColorStop(0.5, 'rgba(255,255,255,' + (glossy ? 0.34 : 0.22) + ')'); s.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = s; g.fillRect(-W, -140, W * 2, 280);
+    var s2 = g.createLinearGradient(0, 170, 0, 230);
+    s2.addColorStop(0, 'rgba(255,255,255,0)'); s2.addColorStop(0.5, 'rgba(255,255,255,' + (glossy ? 0.16 : 0.08) + ')'); s2.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = s2; g.fillRect(-W, 170, W * 2, 60);
+    g.restore();
+
+    // body crease
+    var cy = H * 0.47;
+    g.fillStyle = 'rgba(255,255,255,' + (glossy ? 0.55 : 0.2) + ')'; g.fillRect(0, cy, W, 3);
+    var sh = g.createLinearGradient(0, cy + 3, 0, cy + 30);
+    sh.addColorStop(0, 'rgba(0,0,0,0.38)'); sh.addColorStop(1, 'rgba(0,0,0,0)');
+    g.fillStyle = sh; g.fillRect(0, cy + 3, W, 27);
+
+    // crisp reflections of the workshop lights
+    g.fillStyle = 'rgba(255,255,255,' + (glossy ? 0.17 : 0.05) + ')';
+    g.beginPath(); g.moveTo(90, 46); g.lineTo(540, 46); g.lineTo(450, 250); g.lineTo(10, 250); g.closePath(); g.fill();
+    g.beginPath(); g.moveTo(640, 46); g.lineTo(900, 46); g.lineTo(830, 250); g.lineTo(570, 250); g.closePath(); g.fill();
+
+    // metallic flake
+    for (var i = 0; i < 2600; i++) {
+      var a = 0.04 + r() * 0.1, sz = 1 + r() * 0.8;
+      g.fillStyle = 'rgba(200,225,255,' + a + ')';
+      g.fillRect(r() * W, r() * H, sz, sz);
+    }
+
+    if (!glossy) {
+      g.fillStyle = 'rgba(185,198,220,0.30)'; g.fillRect(0, 0, W, H);
+      var q = rng(29), n;
+      // swirl marks
+      for (n = 0; n < 560; n++) {
+        var cx = q() * W, cyy = q() * H, rad = 18 + q() * 150, st = q() * 6.28, len = 0.3 + q() * 1.1;
+        g.lineWidth = 0.4 + q() * 0.5;
+        g.strokeStyle = 'rgba(255,255,255,' + (0.06 + q() * 0.17) + ')';
+        g.beginPath(); g.arc(cx, cyy, rad, st, st + len); g.stroke();
+      }
+      // deeper scratches
+      for (n = 0; n < 16; n++) {
+        var x = q() * W, y = q() * H, ang = -0.5 + q() * 1.0, L = 120 + q() * 320;
+        var dx = Math.cos(ang) * L, dy = Math.sin(ang) * L;
+        g.lineWidth = 0.9; g.strokeStyle = 'rgba(255,255,255,0.5)';
+        g.beginPath(); g.moveTo(x, y); g.lineTo(x + dx, y + dy); g.stroke();
+        g.lineWidth = 0.9; g.strokeStyle = 'rgba(0,10,30,0.4)';
+        g.beginPath(); g.moveTo(x, y + 1.3); g.lineTo(x + dx, y + dy + 1.3); g.stroke();
+      }
+      // scuff
+      var sc = g.createRadialGradient(W * 0.78, H * 0.64, 4, W * 0.78, H * 0.64, 110);
+      sc.addColorStop(0, 'rgba(230,236,245,0.34)'); sc.addColorStop(1, 'rgba(230,236,245,0)');
+      g.fillStyle = sc; g.fillRect(W * 0.78 - 120, H * 0.64 - 120, 240, 240);
+    }
+
+    var v = g.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, W * 0.62);
+    v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,0.38)');
+    g.fillStyle = v; g.fillRect(0, 0, W, H);
+    return c;
+  }
+
+  var A = paint(false), B = paint(true);
+  var M = layer(), mctx = M.getContext('2d');
+  var T = layer(), tctx = T.getContext('2d');
+  var sm = document.createElement('canvas'); sm.width = 40; sm.height = 24;
+  var sx = sm.getContext('2d', { willReadFrequently: true });
+  var pad = { x: 0, y: 0, on: false };
+  var last = null, sweep = null, drawing = false, dirty = true, raf = null, lastRead = 0;
+  var guEl = document.getElementById('gu'), fillEl = document.getElementById('gufill'), hintEl = document.getElementById('hint');
+
+  function stamp(x, y) {
+    var g = mctx.createRadialGradient(x, y, 0, x, y, BR);
+    g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(0.6, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    mctx.fillStyle = g; mctx.fillRect(x - BR, y - BR, BR * 2, BR * 2);
+  }
+  function seg(a, b) {
+    var dx = b.x - a.x, dy = b.y - a.y, d = Math.sqrt(dx * dx + dy * dy), n = Math.max(1, Math.ceil(d / 10));
+    for (var i = 1; i <= n; i++) stamp(a.x + dx * i / n, a.y + dy * i / n);
+  }
+  function move(x, y) {
+    if (last) seg(last, { x: x, y: y }); else stamp(x, y);
+    last = { x: x, y: y }; pad.x = x; pad.y = y; pad.on = true; dirty = true;
+  }
+  function coverage() {
+    sx.clearRect(0, 0, 40, 24); sx.drawImage(M, 0, 0, 40, 24);
+    var d = sx.getImageData(0, 0, 40, 24).data, a = 0;
+    for (var i = 3; i < d.length; i += 4) a += d[i];
+    return a / (d.length / 4) / 255;
+  }
+  function readout() {
+    var cov = Math.min(1, coverage() * 1.04);
+    guEl.textContent = Math.round(12 + 76 * cov) + ' GU';
+    fillEl.style.width = Math.round(cov * 100) + '%';
+    hintEl.textContent = cov > 0.97 ? 'Панель отполирована' : (cov > 0.05 ? 'Проведите по оставшимся царапинам' : 'Проведите по панели, чтобы отполировать');
+  }
+  function render() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(A, 0, 0);
+    tctx.globalCompositeOperation = 'source-over';
+    tctx.clearRect(0, 0, W, H);
+    tctx.drawImage(B, 0, 0);
+    tctx.globalCompositeOperation = 'destination-in';
+    tctx.drawImage(M, 0, 0);
+    ctx.drawImage(T, 0, 0);
+    if (pad.on) {
+      ctx.save();
+      ctx.beginPath(); ctx.arc(pad.x, pad.y, BR, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.07)'; ctx.fill();
+      ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.stroke();
+      ctx.restore();
+    }
+  }
+  function loop(now) {
+    raf = null;
+    if (sweep) {
+      var u = Math.min(1, (now - sweep.t0) / sweep.dur), f = u * sweep.rows;
+      var row = Math.min(sweep.rows - 1, Math.floor(f)), fr = f - row;
+      var x = row % 2 === 0 ? sweep.x0 + (sweep.x1 - sweep.x0) * fr : sweep.x1 - (sweep.x1 - sweep.x0) * fr;
+      var y = sweep.y0 + (sweep.y1 - sweep.y0) * (row / (sweep.rows - 1));
+      move(x, y);
+      if (u >= 1) { sweep = null; last = null; pad.on = false; }
+    }
+    if (dirty) {
+      render(); dirty = false;
+      if (now - lastRead > 100 || !sweep) { readout(); lastRead = now; }
+    }
+    if (sweep) raf = requestAnimationFrame(loop);
+  }
+  function kick() { if (!raf) raf = requestAnimationFrame(loop); }
+
+  function startSweep(x0, x1, dur, rows) {
+    if (reduce) { fillTo(x1); return; }
+    last = null;
+    sweep = { t0: performance.now(), dur: dur, x0: x0, x1: x1, y0: H * 0.12, y1: H * 0.88, rows: rows };
+    kick();
+  }
+  function fillTo(x1) {
+    var g = mctx.createLinearGradient(x1 - 90, 0, x1, 0);
+    g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    mctx.fillStyle = '#000'; mctx.fillRect(0, 0, x1 - 90, H);
+    mctx.fillStyle = g; mctx.fillRect(x1 - 90, 0, 90, H);
+    dirty = true; kick();
+  }
+  function reset() {
+    sweep = null; last = null; pad.on = false;
+    mctx.clearRect(0, 0, W, H); dirty = true; kick();
+  }
+
+  function pt(e) {
+    var r = cv.getBoundingClientRect();
+    return { x: (e.clientX - r.left) * W / r.width, y: (e.clientY - r.top) * H / r.height };
+  }
+  cv.addEventListener('pointerdown', function (e) {
+    sweep = null; drawing = true; last = null;
+    try { cv.setPointerCapture(e.pointerId); } catch (err) {}
+    var p = pt(e); move(p.x, p.y); kick();
+  });
+  cv.addEventListener('pointermove', function (e) {
+    var p = pt(e);
+    if (drawing) { move(p.x, p.y); }
+    else if (e.pointerType === 'mouse' && !sweep) { pad.x = p.x; pad.y = p.y; pad.on = true; dirty = true; }
+    kick();
+  });
+  function stop() { drawing = false; last = null; if (!sweep) { pad.on = false; dirty = true; kick(); } }
+  cv.addEventListener('pointerup', stop);
+  cv.addEventListener('pointercancel', stop);
+  cv.addEventListener('pointerleave', function () { if (!drawing && !sweep) { pad.on = false; dirty = true; kick(); } });
+
+  document.getElementById('btn-polish').addEventListener('click', function () { startSweep(60, W - 60, 3400, 6); });
+  document.getElementById('btn-reset').addEventListener('click', reset);
+
+  render(); readout();
+  setTimeout(function () { startSweep(60, W * 0.56, 3000, 6); }, 600);
+
+  // phone copy
+  var copyBtn = document.getElementById('copy'), phoneEl = document.getElementById('phone');
+  copyBtn.addEventListener('click', function () {
+    var done = function (msg) { copyBtn.textContent = msg; setTimeout(function () { copyBtn.textContent = 'Скопировать номер'; }, 1800); };
+    var ok = function () { done('Скопировано'); };
+    var fallback = function () {
+      try {
+        var rg = document.createRange(); rg.selectNodeContents(phoneEl);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(rg);
+      } catch (e) {}
+      done('Номер выделен');
+    };
+    try { navigator.clipboard.writeText('+7 (905) 975-18-18').then(ok, fallback); } catch (e) { fallback(); }
+  });
+
+  // prefilled WhatsApp message
+  var form = document.getElementById('req');
+  var wa = document.getElementById('wa');
+  function buildLink() {
+    var svc = document.getElementById('svc').value;
+    var car = document.getElementById('car').value.trim();
+    var note = document.getElementById('note').value.trim();
+    var t = 'Здравствуйте! Нужна услуга: ' + svc + '.';
+    if (car) t += ' Автомобиль: ' + car + '.';
+    if (note) t += ' ' + note;
+    wa.href = 'https://wa.me/79059751818?text=' + encodeURIComponent(t);
+  }
+  form.addEventListener('input', buildLink);
+  form.addEventListener('change', buildLink);
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+  buildLink();
+})();
+</script>
+
+</body></html>
